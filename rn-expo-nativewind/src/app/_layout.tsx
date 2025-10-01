@@ -1,5 +1,7 @@
 import { Stack } from "expo-router";
-import "../../global.css";
+
+import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider';
+import '@/global.css';
 
 export default function RootStackLayout({
   children,
@@ -7,8 +9,12 @@ export default function RootStackLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Stack>
+    
+    <GluestackUIProvider mode="dark">
+      <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
     </Stack>
+    </GluestackUIProvider>
+  
   );
 }
